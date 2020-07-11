@@ -14,10 +14,10 @@ xunsearch: 1.4.14
 $ docker pull seffeng/xunsearch
 
 # 运行
-$ docker run --name xunsearch-test -d -p <port>:8383 -p <port>:8384 -v <data-dir>:/opt/websrv/data/xunsearch seffeng/xunsearch
+$ docker run --name xunsearch-test -d -p <port>:8383 -p <port>:8384 -v <data-dir>:/opt/websrv/data/xunsearch -v <tmp-dir>:/opt/websrv/tmp -v <log-dir>:/opt/websrv/logs seffeng/xunsearch
 
 # 例子：
-$ docker run --name xunsearch-test -d -p 8383:8383 -p 8384:8384 -v /srv/websrv/data/xunsearch:/opt/websrv/data/xunsearch seffeng/xunsearch
+$ docker run --name xunsearch-test -d -p 8383:8383 -p 8384:8384 -v /srv/websrv/data/xunsearch:/opt/websrv/data/xunsearch -v /srv/websrv/tmp:/opt/websrv/tmp -v /srv/websrv/logs/xunsearch:/opt/websrv/logs seffeng/xunsearch
 
 # 查看正在运行的容器
 $ docker ps
@@ -54,5 +54,5 @@ $ docker cp [CONTAINER ID]:/root/file /root/file
 $ docker network create network-01
 
 ## 运行容器增加 --network network-01 --network-alias [name-net-alias]
-$ docker run --name xunsearch-alias1 --network network-01 --network-alias xunsearch-net1 -d -p 8383:8383 -p 8384:8384 -v /srv/websrv/data/xunsearch:/opt/websrv/data/xunsearch seffeng/xunsearch
+$ docker run --name xunsearch-alias1 --network network-01 --network-alias xunsearch-net1 -d -p 8383:8383 -p 8384:8384 -v /srv/websrv/data/xunsearch:/opt/websrv/data/xunsearch -v /srv/websrv/tmp:/opt/websrv/tmp -v /srv/websrv/logs/xunsearch:/opt/websrv/logs seffeng/xunsearch
 ```

@@ -16,7 +16,7 @@ COPY conf ./conf
 
 RUN apk update && apk add ${EXTEND} &&\
  wget ${XUNSEARCH_URL} &&\
- mkdir -p ${DATA_DIR} &&\
+ mkdir -p ${DATA_DIR} ${BASE_DIR}/logs ${BASE_DIR}/tmp &&\
  mkdir -p /etc/supervisor.d/ && cp -Rf /tmp/conf/supervisor/* /etc/supervisor.d/ &&\
  tar -jxf ${XUNSEARCH_VERSION}.tar.bz2 &&\
  xs_dir=$(ls -F | grep xunsearch | grep "/$" | awk '{print $1; exit}') &&\
@@ -30,6 +30,7 @@ RUN apk update && apk add ${EXTEND} &&\
  rm -rf /var/cache/apk/* &&\
  rm -rf /tmp/*
 
-EXPOSE 8383 8384
+VOLUME ["${DATA_DIR}", "${BASE_DIR}/logs", "${BASE_DIR}/tmp"]
 
+EXPOSE 8383 8384
 CMD ["supervisord", "-c", "/etc/supervisord.conf"]
