@@ -20,7 +20,6 @@ RUN apk update && apk add ${EXTEND} &&\
  mkdir -p /etc/supervisor.d/ && cp -Rf /tmp/conf/supervisor/* /etc/supervisor.d/ &&\
  tar -jxf ${XUNSEARCH_VERSION}.tar.bz2 &&\
  xs_dir=$(ls -F | grep xunsearch | grep "/$" | awk '{print $1; exit}') &&\
- echo "${xs_dir}" &&\
  cd "${xs_dir}" &&\
  sh setup.sh --prefix=${INSTALL_DIR} &&\
  ln -s ${INSTALL_DIR}/bin/xs-ctl.sh /usr/bin/xs-ctl &&\
