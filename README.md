@@ -1,11 +1,8 @@
 # Docker Alpine XunSearch
 
-## 环境
+## 版本
 
-```
-alpine: ^3.13
-xunsearch: 1.4.15
-```
+* [1.4.16 , latest](https://github.com/seffeng/docker-xunsearch)
 
 ## 常用命令：
 
