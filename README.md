@@ -2,7 +2,7 @@
 
 ## 版本
 
-* [1.4.16 , latest](https://github.com/seffeng/docker-xunsearch)
+* [1.4.17 , latest](https://github.com/seffeng/docker-xunsearch)
 
 ## 常用命令：
 

@@ -1,6 +1,6 @@
-FROM    seffeng/alpine:latest
+FROM seffeng/alpine:3.16
 
-MAINTAINER seffeng "seffeng@sina.cn"
+LABEL author="zxf <seffeng@live.com>"
 
 ARG BASE_DIR="/opt/websrv"
 
